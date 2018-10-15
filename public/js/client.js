@@ -85,9 +85,10 @@ var randomBadgeColor = function () {
 };
 
 var getBadges = function (t) {
-  return t.card('name')
-    .get('name')
-    .then(function (cardName) {
+  return Promise.all([
+    t.card('name').get('name'),
+    t.get('card', 'shared', 'current', 0)
+  ]).spread(function (cardName,currentCounter) {
       console.log('We just loaded the card name for fun: ' + cardName);
 
       return [
@@ -117,7 +118,7 @@ var getBadges = function (t) {
           // also support callback functions so that you can open for example
           // open a popup on click
           title: 'Counter', // for detail badges only
-          text: t.get('card', 'shared', 'current', 0),
+          text: currentCounter,
           icon: GRAY_ICON, // for card front badges only
           callback: function (t, options) { // function to run on click
             console.log('before open counter.html', t, options)
