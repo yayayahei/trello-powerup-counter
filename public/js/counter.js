@@ -29,7 +29,7 @@ function setPercent() {
 t.render(function(){
   return Promise.all([
     t.get('card', 'shared', 'min'),
-    t.get('card', 'private', 'max'),
+    t.get('card', 'shared', 'max'),
     t.get('card','shared','current')
   ])
   .spread(function(savedMin, savedMax,savedCurrent){
@@ -43,7 +43,7 @@ t.render(function(){
 });
 
 document.getElementById('save').addEventListener('click', function(){
-  return t.set('card', 'private', 'max', maxInputer.value)
+  return t.set('card', 'shared', 'max', maxInputer.value)
   .then(function(){
     return t.set('card', 'shared', 'min', minInputer.value);
   })
