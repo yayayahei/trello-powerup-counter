@@ -85,6 +85,7 @@ var randomBadgeColor = function () {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
 
+
 var getCardDetailBadges = function (t) {
   return Promise.all([
     t.card('name').get('name'),
@@ -152,7 +153,7 @@ var getBadges = function (t) {
         {
           text: currentCounter,
           icon: currentCounter>0?MATH_ICON_GE:null, // for card front badges only
-          color:randomBadgeColor()
+          color:currentCounter>0?'purple':null
         }
       ];
     });
