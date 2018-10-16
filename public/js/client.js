@@ -149,13 +149,13 @@ var getBadges = function (t) {
     t.get('card', 'shared', 'current', 0)
   ]).spread(function (currentCounter) {
     console.log('card-shared-current:',currentCounter);
-      return [
+      return currentCounter>0? [
         {
-          text: currentCounter>0?currentCounter:null,
-          icon: currentCounter>0?MATH_ICON_GE:null, // for card front badges only
-          color:currentCounter>0?'purple':null
+          text: currentCounter,
+          icon: MATH_ICON_GE, // for card front badges only
+          color:'purple'
         }
-      ];
+      ]:[];
     });
 };
 
