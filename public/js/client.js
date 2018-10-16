@@ -147,11 +147,12 @@ var getBadges = function (t) {
   return Promise.all([
     t.get('card', 'shared', 'current', 0)
   ]).spread(function (currentCounter) {
+    console.log('card-shared-current:',currentCounter);
       return [
         {
           text: currentCounter,
-          icon: MATH_ICON_GE, // for card front badges only
-          color:null
+          icon: currentCounter>0?MATH_ICON_GE:null, // for card front badges only
+          color:randomBadgeColor()
         }
       ];
     });
