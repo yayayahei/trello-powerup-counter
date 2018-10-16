@@ -132,15 +132,15 @@ var getCardDetailBadges = function (t) {
             });
           }
         },
-        {
-          // card detail badges (those that appear on the back of cards)
-          // also support callback functions so that you can open for example
-          // open a popup on click
-          title: 'Visted', // for detail badges only
-          text: vistedTimes,
-          icon: MATH_ICON_GE, // for card front badges only
-          color:'yellow'
-        }
+        // {
+        //   // card detail badges (those that appear on the back of cards)
+        //   // also support callback functions so that you can open for example
+        //   // open a popup on click
+        //   title: 'Visted', // for detail badges only
+        //   text: vistedTimes,
+        //   icon: MATH_ICON_GE, // for card front badges only
+        //   color:'yellow'
+        // }
         // , {
         //   // or for simpler use cases you can also provide a url
         //   // when the user clicks on the card detail badge they will
