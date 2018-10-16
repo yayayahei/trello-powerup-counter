@@ -80,7 +80,7 @@ var GLITCH_ICON = 'https://cdn.glitch.com/2442c68d-7b6d-4b69-9d13-feab530aa88e%2
 var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-gray.svg';
 var WHITE_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-white.svg';
 var MATH_ICON_E='https://image.flaticon.com/icons/svg/261/261941.svg';
-var MATH_ICON_GE='https://image.flaticon.com/icons/svg/43/43716.svg';
+var MATH_ICON_GE='http://cdn.sfont.cn/svg/download/hff8dd.svg?n=(expression_ematical_greater_than_equal)_SFont.CN';
 var randomBadgeColor = function () {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
