@@ -151,7 +151,7 @@ var getBadges = function (t) {
     console.log('card-shared-current:',currentCounter);
       return [
         {
-          text: currentCounter,
+          text: currentCounter>0?currentCounter:null,
           icon: currentCounter>0?MATH_ICON_GE:null, // for card front badges only
           color:currentCounter>0?'purple':null
         }
