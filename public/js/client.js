@@ -84,7 +84,7 @@ var randomBadgeColor = function () {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
 
-var getBadges = function (t) {
+var getCardDetailBadges = function (t) {
   return Promise.all([
     t.card('name').get('name'),
     t.get('card', 'shared', 'current', 0)
@@ -139,6 +139,19 @@ var getBadges = function (t) {
         //   url: 'https://trello.com/home',
         //   target: 'Trello Landing Page' // optional target for above url
         // }
+      ];
+    });
+};
+var getBadges = function (t) {
+  return Promise.all([
+    t.get('card', 'shared', 'current', 0)
+  ]).spread(function (currentCounter) {
+      return [
+        {
+          text: currentCounter,
+          icon: GRAY_ICON, // for card front badges only
+          color:null
+        }
       ];
     });
 };
@@ -335,9 +348,9 @@ TrelloPowerUp.initialize({
   //     target: 'Inspiring Boards' // optional target for above url
   //   }];
   // },
-  // 'card-badges': function(t, options){
-  //   return getBadges(t);
-  // },
+  'card-badges': function(t, options){
+    return getBadges(t);
+  },
   // 'card-buttons': function(t, options) {
   //   return [{
   //     // usually you will provide a callback function to be run on button click
@@ -355,7 +368,7 @@ TrelloPowerUp.initialize({
   // },
   'card-detail-badges': function (t, options) {
     console.log('card-detail-badges:', t, options);
-    return getBadges(t);
+    return getCardDetailBadges(t);
   },
   // 'card-from-url': function(t, options) {
   //   // options.url has the url in question
