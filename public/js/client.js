@@ -89,10 +89,11 @@ var randomBadgeColor = function () {
 var getCardDetailBadges = function (t) {
   return Promise.all([
     t.card('name').get('name'),
-    t.get('card', 'shared', 'current', 0)
-  ]).spread(function (cardName,currentCounter) {
+    t.get('card', 'shared', 'current', 0),
+    t.get('card', 'shared', 'visted-times', 0),
+  ]).spread(function (cardName,currentCounter,vistedTimes) {
       console.log('We just loaded the card name for fun: ' + cardName);
-
+      t.set('card','shared','visted-times',vistedTimes+1);
       return [
         //   {
         //   // dynamic badges can have their function rerun after a set number
@@ -130,6 +131,15 @@ var getCardDetailBadges = function (t) {
               height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
             });
           }
+        },
+        {
+          // card detail badges (those that appear on the back of cards)
+          // also support callback functions so that you can open for example
+          // open a popup on click
+          title: 'Visted', // for detail badges only
+          text: vistedTimes,
+          icon: MATH_ICON_GE, // for card front badges only
+          color:'yellow'
         }
         // , {
         //   // or for simpler use cases you can also provide a url
