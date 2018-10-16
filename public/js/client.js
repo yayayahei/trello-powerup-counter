@@ -79,7 +79,7 @@ t.getAll();
 var GLITCH_ICON = 'https://cdn.glitch.com/2442c68d-7b6d-4b69-9d13-feab530aa88e%2Fglitch-icon.svg?1489773457908';
 var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-gray.svg';
 var WHITE_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-white.svg';
-
+var MATH_ICON_E='https://image.flaticon.com/icons/svg/261/261941.svg';
 var randomBadgeColor = function () {
   return ['green', 'yellow', 'red', 'none'][Math.floor(Math.random() * 4)];
 };
@@ -149,7 +149,7 @@ var getBadges = function (t) {
       return [
         {
           text: currentCounter,
-          icon: GRAY_ICON, // for card front badges only
+          icon: MATH_ICON_E, // for card front badges only
           color:null
         }
       ];
