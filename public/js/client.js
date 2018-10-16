@@ -93,7 +93,7 @@ var getCardDetailBadges = function (t) {
     t.get('card', 'shared', 'visted-times', 0),
   ]).spread(function (cardName,currentCounter,vistedTimes) {
       console.log('We just loaded the card name for fun: ' + cardName);
-      t.set('card','shared','visted-times',vistedTimes+1);
+      // t.set('card','shared','visted-times',vistedTimes+1);
       return [
         //   {
         //   // dynamic badges can have their function rerun after a set number
