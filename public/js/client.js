@@ -77,7 +77,9 @@ t.getAll();
 */
 
 var GLITCH_ICON = 'https://cdn.glitch.com/2442c68d-7b6d-4b69-9d13-feab530aa88e%2Fglitch-icon.svg?1489773457908';
-var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-gray.svg';
+// var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-gray.svg';
+var GRAY_ICON = '../imgs/icon.png';
+
 var WHITE_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4bc6e88b7618%2Ficon-white.svg';
 var MATH_ICON_E='https://image.flaticon.com/icons/svg/261/261941.svg';
 var MATH_ICON_GE='https://image.flaticon.com/icons/svg/43/43716.svg';
@@ -364,21 +366,15 @@ TrelloPowerUp.initialize({
   'card-badges': function(t, options){
     return getBadges(t);
   },
-  // 'card-buttons': function(t, options) {
-  //   return [{
-  //     // usually you will provide a callback function to be run on button click
-  //     // we recommend that you use a popup on click generally
-  //     icon: GRAY_ICON, // don't use a colored icon here
-  //     text: 'Open Popup',
-  //     callback: cardButtonCallback
-  //   }, {
-  //     // but of course, you could also just kick off to a url if that's your thing
-  //     icon: GRAY_ICON,
-  //     text: 'Just a URL',
-  //     url: 'https://developers.trello.com',
-  //     target: 'Trello Developer Site' // optional target for above url
-  //   }];
-  // },
+  'card-buttons': function(t, options) {
+    return [{
+      // usually you will provide a callback function to be run on button click
+      // we recommend that you use a popup on click generally
+      icon: GRAY_ICON, // don't use a colored icon here
+      text: 'Counter',
+      // callback: cardButtonCallback
+    }];
+  },
   'card-detail-badges': function (t, options) {
     console.log('card-detail-badges:', t, options);
     return getCardDetailBadges(t);
